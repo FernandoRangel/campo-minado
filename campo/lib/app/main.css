@@ -1,0 +1,46 @@
+table td {
+	padding: 1px;
+}
+.campo {
+	margin: 1px;
+	width: 30px;
+    height: 30px;
+    float: left;
+    text-align: center;
+    padding: 0px;
+    font-weight: bold;
+}
+.campo.blue {
+	color: blue;
+}
+.campo.red {
+	color: red;
+}
+.campo.green {
+	color: green;
+}
+.campo.orange {
+	color: orange;
+}
+.campo.yellow {
+	color: yellow;
+}
+.campo.black {
+	color: black;
+}
+.campo.purple {
+	color: purple;
+}
+.campo.gray {
+	color: gray;
+}
+.campo.marcado {
+	color: white!important;
+}
+.separador {
+	width: 100%;
+	height: 32px;
+}
+.bloquear-clique {
+  pointer-events: none;
+}

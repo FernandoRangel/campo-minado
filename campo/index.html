@@ -1,0 +1,30 @@
+<html ng-app="campo">
+  <head>
+    <title>Campo</title>
+    <script type="text/javascript" src="lib/angular/angular.js"></script>
+    <script type="text/javascript" src="lib/jquery/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="controller.js"></script>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="lib/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="lib/app/main.css">
+  </head>
+  <body ng-controller="campoCtrl" oncontextmenu="return false">
+    <br><br>
+    <div class="container">
+      <div class="panel panel-default">
+        <div class="panel-heading">{{bombas}} <i class="fa fa-bomb"></i>
+        <button class="btn btn-info" ng-click="reiniciarJogo()">Reiniciar</button></div>
+        <div class="panel-body tabuleiro">
+          <div ng-repeat="(key, campo) in campos">
+            <button class="btn campo" ng-class="{'btn-info': !campo.aberto, 'btn-default': campo.aberto, 'btn-warning': campo.marcado, 'btn-danger': jogo.perdeu && campo.bomba && !campo.marcado, 'blue': campo.valor==1, 'green': campo.valor==2, 'orange': campo.valor==3, 'red': campo.valor==4, 'purple': campo.valor==5, 'black': campo.valor==6, 'gray': campo.valor==7, 'yellow': campo.valor==8, 'marcado': campo.marcado}" ng-click="clickCampo(campo)" ng-dblclick="dblClickCampo(campo)" ng-right-click="marcaCampo(campo)">
+              <font ng-show="campo.aberto && !campo.bomba">{{campo.valor}}</font>
+              <font ng-show="campo.aberto && campo.bomba"><i class="fa fa-bomb"></i></font>
+              <font ng-show="!campo.aberto && campo.marcado"><i class="fa fa-flag"></i></font>
+            </button>
+            <div class="separador" ng-show="(key+1)%colunas==0"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
